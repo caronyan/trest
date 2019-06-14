@@ -1,4 +1,4 @@
-package org.carony.trest.common.utils;
+package org.carony.trest.common.util;
 
 /**
  * @author Caronyan
