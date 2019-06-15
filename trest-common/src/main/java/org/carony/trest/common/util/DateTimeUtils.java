@@ -2,6 +2,7 @@ package org.carony.trest.common.util;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 /**
@@ -122,7 +123,7 @@ public class DateTimeUtils {
      */
     public static Date getStartOfDate(Date date) {
         LocalDateTime dateTime =
-                LocalDateTime.ofInstant(Instant.ofEpochSecond(date.getTime()), ZoneId.systemDefault());
+                LocalDateTime.ofInstant(Instant.ofEpochSecond(date.getTime() / 1000), ZoneId.systemDefault());
         LocalDateTime startOfDate = dateTime.with(LocalTime.MIN);
         return Date.from(startOfDate.atZone(ZoneId.systemDefault()).toInstant());
     }
@@ -136,9 +137,10 @@ public class DateTimeUtils {
      */
     public static Date getEndOfDate(Date date) {
         LocalDateTime dateTime =
-                LocalDateTime.ofInstant(Instant.ofEpochSecond(date.getTime()), ZoneId.systemDefault());
-        LocalDateTime startOfDate = dateTime.with(LocalTime.MAX);
-        return Date.from(startOfDate.atZone(ZoneId.systemDefault()).toInstant());
+                LocalDateTime.ofInstant(Instant.ofEpochSecond(date.getTime() / 1000), ZoneId.systemDefault());
+        // ignore nanos
+        LocalDateTime endOfDate = dateTime.with(LocalTime.MAX).truncatedTo(ChronoUnit.SECONDS);
+        return Date.from(endOfDate.atZone(ZoneId.systemDefault()).toInstant());
     }
 
 }
