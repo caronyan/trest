@@ -16,9 +16,9 @@ public class StringUtils {
      * @return param string
      */
     public static String getUrlParamStrFromMap(Map<String, String> paramMap) {
-        return paramMap.entrySet().isEmpty()
-                ? ""
-                : ("?" + String.join("&", paramMap.entrySet().stream()
+        return paramMap.entrySet().isEmpty() ? ""
+            : ("?" + String.join("&",
+                paramMap.entrySet().stream()
                     .map(paramMapEntry -> String.format("%s=%s", paramMapEntry.getKey(), paramMapEntry.getValue()))
                     .collect(Collectors.toList())));
     }
