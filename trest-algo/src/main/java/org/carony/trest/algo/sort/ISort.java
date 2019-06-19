@@ -13,8 +13,8 @@ import org.carony.trest.algo.common.constants.SortOrder;
 @FunctionalInterface
 public interface ISort {
     /**
-     *
      * @param originalList original list to be sorted
+     * @param sortOrder sort order
      * @return sorted list
      */
     List<? extends Number> sort(List<? extends Number> originalList, SortOrder sortOrder);
