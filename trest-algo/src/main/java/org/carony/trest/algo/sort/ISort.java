@@ -1,7 +1,5 @@
 package org.carony.trest.algo.sort;
 
-import java.util.List;
-
 import org.carony.trest.algo.common.constants.SortOrder;
 
 /**
@@ -13,9 +11,11 @@ import org.carony.trest.algo.common.constants.SortOrder;
 @FunctionalInterface
 public interface ISort {
     /**
+     * generic sort interface
+     *
      * @param originalList original list to be sorted
      * @param sortOrder sort order
      * @return sorted list
      */
-    List<? extends Number> sort(List<? extends Number> originalList, SortOrder sortOrder);
+    int[] sort(int[] originalList, SortOrder sortOrder);
 }
