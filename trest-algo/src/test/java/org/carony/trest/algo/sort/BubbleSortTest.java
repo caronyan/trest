@@ -20,7 +20,7 @@ public class BubbleSortTest {
         int[] unsortedList = SortTestData.UNSORTED_SAMLE_A;
         int[] sortedList = BubbleSort.bubbleSort.sort(unsortedList, SortOrder.ASC);
         Object[] origin = {sortedList};
-        Object[] newList = {new int[]{2, 3, 4, 5, 6}};
+        Object[] newList = {SortTestData.SORTED_SAMPLE_A_ASC};
         Assert.assertTrue(Arrays.deepEquals(origin, newList));
     }
 
