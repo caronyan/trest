@@ -1,5 +1,7 @@
 package org.carony.trest.algo.sort;
 
+import org.carony.trest.algo.common.constants.SortOrder;
+
 /**
  * bubble sort
  *
@@ -14,7 +16,7 @@ public class BubbleSort {
     public static ISort bubbleSort = (originalList, sortOrder) -> {
         for (int i = 0; i < originalList.length; i++) {
             for (int j = 0; j < originalList.length - 1 - i; j++) {
-                if (originalList[j] > originalList[j + 1]) {
+                if (originalList[j] > originalList[j + 1] && sortOrder.equals(SortOrder.ASC)) {
                     int temp = originalList[j];
                     originalList[j] = originalList[j+1];
                     originalList[j+1] = temp;
