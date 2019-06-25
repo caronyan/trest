@@ -9,4 +9,5 @@ package org.carony.trest.algo.common.data;
 public class SortTestData {
     public static int[] UNSORTED_SAMLE_A = {5, 3, 4, 2, 6};
     public static int[] SORTED_SAMPLE_A_ASC = {2, 3, 4, 5, 6};
+    public static int[] SORTED_SAMPLE_A_DESC = {6, 5, 4, 3, 2};
 }

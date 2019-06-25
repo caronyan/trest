@@ -16,11 +16,20 @@ import org.junit.Test;
 public class BubbleSortTest {
 
     @Test
-    public void bubbleSort() {
+    public void bubbleSortAsc() {
         int[] unsortedList = SortTestData.UNSORTED_SAMLE_A;
         int[] sortedList = BubbleSort.bubbleSort.sort(unsortedList, SortOrder.ASC);
         Object[] origin = {sortedList};
         Object[] newList = {SortTestData.SORTED_SAMPLE_A_ASC};
+        Assert.assertTrue(Arrays.deepEquals(origin, newList));
+    }
+
+    @Test
+    public void bubbleSortDesc() {
+        int[] unsortedList = SortTestData.UNSORTED_SAMLE_A;
+        int[] sortedList = BubbleSort.bubbleSort.sort(unsortedList, SortOrder.DESC);
+        Object[] origin = {sortedList};
+        Object[] newList = {SortTestData.SORTED_SAMPLE_A_DESC};
         Assert.assertTrue(Arrays.deepEquals(origin, newList));
     }
 
